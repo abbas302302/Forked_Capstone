@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, render, redirect
-# from .models import related models
-# from .restapis import related methods
+# from .models import CarDealer, CarModel, CarMake
+# from .restapis import get_dealers_from_cf, get_dealers_by_state_from_cf, get_dealer_by_id_from_cf, get_dealer_reviews_from_cf, add_review_to_cf
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from datetime import datetime
@@ -18,12 +18,13 @@ logger = logging.getLogger(__name__)
 
 
 # Create an `about` view to render a static about page
-# def about(request):
-# ...
+def about(request):
+    return render(request, "djangoapp/about.html")
 
 
 # Create a `contact` view to return a static contact page
-#def contact(request):
+def contact(request):
+    return render(request, "djangoapp/contact.html")
 
 # Create a `login_request` view to handle sign in request
 # def login_request(request):
